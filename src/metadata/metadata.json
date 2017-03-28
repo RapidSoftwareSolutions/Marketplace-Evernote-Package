@@ -1,0 +1,468 @@
+{
+  "package": "Evernote",
+  "tagline": "Evernote API",
+  "description": "Evernote",
+  "image": "http:\/\/logo.clearbit.com\/evernote.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Evernote-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "evernote.com",
+    "credentials": [
+      "apiKey",
+      "apiSecret"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "isBusinessUser",
+      "description": "Returns a boolean indicating if the user has a business account",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listNotebooks",
+      "description": "Returns the list of notebooks",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listPersonalNotebooks",
+      "description": "Returns the list of personal notebooks",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listSharedNotebooks",
+      "description": "Returns the list of notebooks shared by the user",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listLinkedNotebooks",
+      "description": "Returns the list of notebooks shared to the user",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getNote",
+      "description": "Retrieves an existing note",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        },
+        {
+          "name": "noteGuid",
+          "type": "String",
+          "info": "Guid of the note",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "uploadNote",
+      "description": "Sends a new Note to the API",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        },
+        {
+          "name": "noteTitle",
+          "type": "String",
+          "info": "Title of the note",
+          "required": true
+        },
+        {
+          "name": "noteContent",
+          "type": "String",
+          "info": "Content of the note",
+          "required": false
+        },
+        {
+          "name": "noteTags",
+          "type": "Array",
+          "info": "Tags of the note",
+          "required": false
+        },
+        {
+          "name": "notebookGuid",
+          "type": "String",
+          "info": "Guid of the notebook to add to",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "replaceNote",
+      "description": "Replaces an existing note by another one",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        },
+        {
+          "name": "noteTitle",
+          "type": "String",
+          "info": "Title of the note",
+          "required": true
+        },
+        {
+          "name": "noteContent",
+          "type": "String",
+          "info": "Content of the note",
+          "required": false
+        },
+        {
+          "name": "noteTags",
+          "type": "Array",
+          "info": "Tags of the note",
+          "required": false
+        },
+        {
+          "name": "noteGuid",
+          "type": "String",
+          "info": "Guid of the note to replace",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteNote",
+      "description": "Delete an existing note",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        },
+        {
+          "name": "noteGuid",
+          "type": "String",
+          "info": "Guid of the note",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "shareNote",
+      "description": "Share an existing note",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        },
+        {
+          "name": "noteGuid",
+          "type": "String",
+          "info": "Guid of the note",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "moveNote",
+      "description": "Move an existing note",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        },
+        {
+          "name": "noteGuid",
+          "type": "String",
+          "info": "Guid of the note",
+          "required": true
+        },
+        {
+          "name": "notebookGuid",
+          "type": "String",
+          "info": "Guid of the notebook",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "isAppNotebookToken",
+      "description": "Checks if the token is an \"app notebook\" one",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        },
+        {
+          "name": "noteGuid",
+          "type": "String",
+          "info": "Guid of the note",
+          "required": true
+        },
+        {
+          "name": "token",
+          "type": "String",
+          "info": "Token to check",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getNotebook",
+      "description": "Get an existing notebook info",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        },
+        {
+          "name": "notebookGuid",
+          "type": "String",
+          "info": "Guid of the notebook",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "findNotesWithSearch",
+      "description": "Searches for notes",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        },
+        {
+          "name": "notebookGuid",
+          "type": "String",
+          "info": "Guid of the notebook",
+          "required": true
+        },
+        {
+          "name": "query",
+          "type": "String",
+          "info": "String to find",
+          "required": true
+        },
+        {
+          "name": "sortOrder",
+          "type": "Number",
+          "info": "Sort order: Normal=0(default), Recently Created = 2, Recently Updated = 4, Relevance = 8, Reverse = 65536, Title=1",
+          "required": false
+        },
+        {
+          "name": "maxResults",
+          "type": "Number",
+          "info": "Max number of results",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUser",
+      "description": "Returns the User corresponding to the provided authentication token",
+      "args": [
+        {
+          "name": "accessToken",
+          "type": "String",
+          "info": "Access token received from Evernote",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
