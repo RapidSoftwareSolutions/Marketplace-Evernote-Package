@@ -7,7 +7,7 @@ Evernote
 
 ## How to get credentials: 
 0. Go to [Evernote](http://evernote.com)
-1. Generate Access Token using [This manual](https://dev.evernote.com/doc/articles/authentication.php) or using [This page](https://www.evernote.com/api/DeveloperToken.action) 
+1. Request key using [This page](https://dev.evernote.com/doc/articles/authentication.php) 
 
 ## Evernote.isBusinessUser
 Returns a boolean indicating if the user has a business account
