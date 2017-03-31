@@ -29,9 +29,10 @@ $app->post('/api/Evernote/replaceNote', function ($request, $response, $args) {
             $newNote->tagNames = $post_data['args']['noteTags'];
         }
 
-        $responseBody['guid'] = $client->replaceNote($note,$newNote)->getGuid();
+        $guid = $client->replaceNote($note,$newNote)->getGuid();
+        $responseBody['guid']  = $guid;
         $result['callback'] = 'success';
-        $result['contextWrites']['to'] = json_encode($responseBody);
+        $result['contextWrites']['to'] = $responseBody;
 
 
     } catch (\Exception $exception) {
