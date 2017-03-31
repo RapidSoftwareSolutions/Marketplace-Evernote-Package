@@ -31,9 +31,10 @@ $app->post('/api/Evernote/uploadNote', function ($request, $response, $args) {
             $notebook = $client->getNotebook($post_data['args']['notebookGuid']);
 
         }
-        $responseBody['guid'] = $client->uploadNote($note, $notebook)->getGuid();
+        $guid = $client->uploadNote($note, $notebook)->getGuid();
+        $responseBody['guid'] = $guid;
         $result['callback'] = 'success';
-        $result['contextWrites']['to'] = json_encode($responseBody);
+        $result['contextWrites']['to'] = $responseBody;
 
 
     } catch (\Exception $exception) {
