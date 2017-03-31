@@ -22,8 +22,6 @@ $app->post('/api/Evernote/listSharedNotebooks', function ($request, $response, $
     try {
 
         $notebooks = $client->listSharedNotebooks();
-var_dump($notebooks);
-exit();
         foreach ($notebooks as $notebook) {
             $responseBody[]['name'] = $notebook->name;
             $responseBody[]['guid'] = $notebook->guid;
