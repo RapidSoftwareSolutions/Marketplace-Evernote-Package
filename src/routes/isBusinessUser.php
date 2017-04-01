@@ -23,7 +23,7 @@ $app->post('/api/Evernote/isBusinessUser', function ($request, $response, $args)
         $isBusinnessUser = $client->isBusinessUser();
         $responseBody['isBusinessUser'] = $isBusinnessUser;
         $result['callback'] = 'success';
-        $result['contextWrites']['to'] = $responseBody;
+        $result['contextWrites']['to'] = json_encode($responseBody);
 
     } catch (\Exception $exception) {
         $responseBody = $exception->getMessage();

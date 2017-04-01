@@ -23,8 +23,11 @@ $app->post('/api/Evernote/findNotesWithSearch', function ($request, $response, $
 
         $notebook = $client->getNotebook($post_data['args']['notebookGuid']);
         $sortOrder = isset($post_data['args']['sortOrder']) ? $post_data['args']['sortOrder'] : 2;
-
+    if(isset($post_data['args']['maxResults']) && strlen($post_data['args']['maxResults']) > 0) {
         $results = $client->findNotesWithSearch($post_data['args']['query'], $notebook, null, $sortOrder, $post_data['args']['maxResults']);
+    } else {
+        $results = $client->findNotesWithSearch($post_data['args']['query'], $notebook, null, $sortOrder);
+    }
         foreach ($results as $note) {
             $responseBody[]['guid'] = $note->guid;
             $responseBody[]['title'] = $note->title;
