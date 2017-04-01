@@ -20,7 +20,8 @@ $app->post('/api/Evernote/isBusinessUser', function ($request, $response, $args)
     $client = new \Evernote\Client($token, $sandbox, null, null, $china);
 
     try {
-        $responseBody = $client->isBusinessUser();
+        $isBusinnessUser = $client->isBusinessUser();
+        $responseBody['isBusinessUser'] = $isBusinnessUser;
         $result['callback'] = 'success';
         $result['contextWrites']['to'] = $responseBody;
 
