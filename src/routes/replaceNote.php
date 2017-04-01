@@ -23,14 +23,16 @@ $app->post('/api/Evernote/replaceNote', function ($request, $response, $args) {
         $note = $client->getNote($post_data['args']['noteGuid']);
         $newNote = new \Evernote\Model\Note();
         $newNote->title = $post_data['args']['noteTitle'];
-        $newNote->content = new \Evernote\Model\PlainTextNoteContent($post_data['args']['noteContent']);
 
-        if (isset($post_data['args']['noteTags'])) {
+        if (isset($post_data['args']['noteContent']) && strlen($post_data['args']['noteContent']) > 0) {
+            $newNote->content = new \Evernote\Model\PlainTextNoteContent($post_data['args']['noteContent']);
+        }
+        if (isset($post_data['args']['noteTags']) && strlen($post_data['args']['noteTags']) > 0) {
             $newNote->tagNames = $post_data['args']['noteTags'];
         }
 
-        $guid = $client->replaceNote($note,$newNote)->getGuid();
-        $responseBody['guid']  = $guid;
+        $guid = $client->replaceNote($note, $newNote)->getGuid();
+        $responseBody['guid'] = $guid;
         $result['callback'] = 'success';
         $result['contextWrites']['to'] = $responseBody;
 

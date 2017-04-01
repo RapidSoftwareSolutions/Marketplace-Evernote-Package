@@ -25,7 +25,6 @@ $app->post('/api/Evernote/uploadNote', function ($request, $response, $args) {
         if (isset($post_data['args']['noteContent']) && strlen($post_data['args']['noteContent']) > 0) {
             $note->content = new \Evernote\Model\PlainTextNoteContent($post_data['args']['noteContent']);
         }
-        $note->content = new \Evernote\Model\PlainTextNoteContent($post_data['args']['noteContent']);
 
         if (isset($post_data['args']['noteTags']) && strlen($post_data['args']['noteTags']) > 0) {
             $note->tagNames = $post_data['args']['noteTags'];
