@@ -3,11 +3,11 @@
 # Evernote Package
 Evernote
 * Domain: [Evernote](http://evernote.com)
-* Credentials: apiKey, apiSecret
+* Credentials: accessToken
 
 ## How to get credentials: 
 0. Go to [Evernote](http://evernote.com)
-1. Request apiKey and apiSecret using [This page](https://dev.evernote.com/doc/articles/authentication.php) 
+1. Request developer token using [This page](https://www.evernote.com/api/DeveloperToken.action) 
 
 ## Evernote.isBusinessUser
 Returns a boolean indicating if the user has a business account
