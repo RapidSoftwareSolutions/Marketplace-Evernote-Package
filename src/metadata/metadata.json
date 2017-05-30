@@ -175,9 +175,14 @@
         },
         {
           "name": "noteTags",
-          "type": "Array",
+          "type": "List",
           "info": "Tags of the note",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "tag",
+            "type": "String",
+            "info": "Single tag"
+          }
         },
         {
           "name": "notebookGuid",
@@ -223,7 +228,12 @@
           "name": "noteTags",
           "type": "Array",
           "info": "Tags of the note",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "tag",
+            "type": "String",
+            "info": "Single tag"
+          }
         },
         {
           "name": "noteGuid",
@@ -419,7 +429,8 @@
         },
         {
           "name": "sortOrder",
-          "type": "Number",
+          "type": "Select",
+          "options": ["0", "2", "4", "8", "65536", "1"],
           "info": "Sort order: Normal=0(default), Recently Created = 2, Recently Updated = 4, Relevance = 8, Reverse = 65536, Title=1",
           "required": false
         },

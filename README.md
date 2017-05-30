@@ -9,6 +9,17 @@ Evernote
 0. Go to [Evernote](http://evernote.com)
 1. Request developer token using [This page](https://www.evernote.com/api/DeveloperToken.action) 
 
+
+## Custom datatypes: 
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]``` 
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+ 
+
 ## Evernote.isBusinessUser
 Returns a boolean indicating if the user has a business account
 
@@ -60,7 +71,7 @@ Upload new Note to the API
 | accessToken | credentials| Access token received from Evernote
 | noteTitle   | String     | Title of the note
 | noteContent | String     | Content of the note
-| noteTags    | Array      | Tags of the note
+| noteTags    | List       | Tags of the note
 | notebookGuid| String     | Guid of the notebook to add to
 
 ## Evernote.replaceNote
@@ -124,7 +135,7 @@ Searches for notes
 | accessToken | credentials| Access token received from Evernote
 | notebookGuid| String     | Guid of the notebook
 | query       | String     | String to find
-| sortOrder   | Number     | Sort order: Normal=0(default), Recently Created = 2, Recently Updated = 4, Relevance = 8, Reverse = 65536, Title=1
+| sortOrder   | Select     | Sort order: Normal=0(default), Recently Created = 2, Recently Updated = 4, Relevance = 8, Reverse = 65536, Title=1
 | maxResults  | Number     | Max number of results
 
 ## Evernote.getUser
