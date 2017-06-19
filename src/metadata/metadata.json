@@ -226,7 +226,7 @@
         },
         {
           "name": "noteTags",
-          "type": "Array",
+          "type": "List",
           "info": "Tags of the note",
           "required": false,
           "structure": {
